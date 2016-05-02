@@ -1,0 +1,15 @@
+This source code is:
+Copyright ©1994-2016 by David R. Tribble, all rights reserved.
+
+This code is copyrighted by the author, but permission is hereby granted
+for its unlimited use, distribution, and modification provided that the
+original copyright and authorship notices are retained unmodified.
+
+Queries about this source code can be sent to mailto:david@tribble.com.
+
+Permission is hereby granted for the unlimited and unrestricted use and
+redistribution of these binary executable and object files (programs).
+However, these executables cannot be sold or used individually for
+monetary or commercial gain. They can be distributed as part of a larger
+commercial software package, however, as long as any monetary gain is
+obtained for the other software in the package and not from these executables.
