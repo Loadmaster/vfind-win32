@@ -1,0 +1,84 @@
+//------------------------------------------------------------------------------
+// vfind.rc
+// Version info for 'vfind.exe'
+//
+// Compile with:
+//	rc /d "VERS=\"R.L\"" /d R=x /d L=y /d "DATE=\"20yy-mm-dd\"" /d "PATCH=\"p\"" vfind.rc
+// where
+//	x = major version number
+//	y = minor version number
+//	p = patch (optional)
+//
+//------------------------------------------------------------------------------
+// @(#)drt/src/cmd/vfind.rc $Revision: 1.0+ $ $Date: 2011-03-13 $
+//------------------------------------------------------------------------------
+
+#include <winver.h>
+
+#ifdef _WIN32
+LANGUAGE 9, 1           // English, US English
+ #pragma code_page(1252)
+#endif
+
+#ifndef R
+ #error Please define R
+#endif
+#ifndef L
+ #error Please define L
+#endif
+#ifndef VERS
+ #error Please define VERS
+#endif
+#ifndef DATE
+ #error Please define DATE
+#endif
+#ifndef PATCH
+ #define PATCH	""
+#endif
+
+#ifndef _MAC
+
+VS_VERSION_INFO VERSIONINFO
+    FILEVERSION R,L,0,0
+    PRODUCTVERSION R,L,0,0
+    FILEFLAGSMASK 0x3FL
+#ifdef _DEBUG
+    FILEFLAGS 0x1L
+#else
+    FILEFLAGS 0x0L
+#endif
+    FILEOS VOS__WINDOWS32	// 0x04L
+    FILETYPE VFT_APP		// 0x01L
+    FILESUBTYPE VFT2_UNKNOWN	// 0x00L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+          //VALUE "Comments", "COMMENT\0"
+          //VALUE "CompanyName", "David R. Tribble\0"
+            VALUE "FileDescription", "File searching utility\0"
+            VALUE "FileVersion", VERS "\0"
+            VALUE "InternalName", "vfind\0"
+            VALUE "Author", "David R. Tribble (david@tribble.com)\0"
+            VALUE "LegalCopyright", "Copyright \2512016 by David R. Tribble"
+                ", all rights reserved.\0"
+          //VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "vfind.c\0"
+          //VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "vfind\0"
+            VALUE "ProductVersion", VERS "\0"
+            VALUE "ProductPatch", PATCH "\0"
+            VALUE "BuildDate", DATE "\0"
+          //VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif // !_MAC
+
+// End
